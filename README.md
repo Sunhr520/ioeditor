@@ -39,13 +39,22 @@ clone本仓库后使用yarn打包
 
 ##  目录解释
 -src
+
 |- assets           储存一些文件，包括但不限于monaco-editor,mingw64,python
+
 |- components       一些功能的实现，比如判断文件使用的语言，调用批处理文件
+
 |- router
+
 |- store
+
 |- views
+
 |- App.vue          样式设计
+
 |- background.js    入口文件
+
+## 版本更新
 
 ## 联系作者
 email: Sunhr520@gmail.com
