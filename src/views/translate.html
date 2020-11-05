@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+        <style>
+            textarea{
+                resize: none;
+                width: 95vw;
+                height: 43vh;
+                font-size: 18px;
+            }
+            #raw{
+                resize: none;
+            }
+            #after{
+                resize: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "app">
+            <textarea id = "raw" v-model = "rawmsg" spellcheck="false" @keyup="_translate" placeholder="请输入待翻译语句"></textarea>
+            
+            <select v-model="rawlanguage">
+                <option v-for="(item,index) in rawlanguageArr" :key="index" :label="item.label" :value="item.value"> </option>
+            </select>
+
+            <select v-model="aftlanguage">
+                <option v-for="(item,index) in aftlanguageArr" :key="index" :label="item.label" :value="item.value"> </option>
+            </select>
+
+            <textarea id = "after" v-model = "aftmsg" disabled></textarea>
+        </div>
+        <script type = "module">
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    rawmsg:"",
+                    aftmsg:"",
+                    rawlanguage: "en",
+                    aftlanguage: "zh",
+                    rawlanguageArr: [
+                        {
+                            value:"auto",
+                            label:"自动"
+                        },{
+                            value:"zh",
+                            label:"中文"
+                        },{
+                            value:"en",
+                            label:"英文"
+                        }
+                    ],  
+                    aftlanguageArr: [
+                        {
+                            value:"zh",
+                            label:"中文"
+                        },{
+                            value:"en",
+                            label:"英文"
+                        }
+                    ]
+                },
+                methods:{
+                    _translate(){                
+                        var ts = require("../assets/controllers/translate.js");
+                        ts.translate(this.rawmsg, this.rawlanguage, this.aftlanguage).then((data)=>{
+                            this.aftmsg = data;
+                        })
+                    }
+                }})
+        </script>
+    </body>
+</html>

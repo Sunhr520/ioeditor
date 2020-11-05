@@ -115,18 +115,36 @@ function createMenu() {
         ]
     });
     // Help menu
+    // template.push({
+    //     label: "链接",
+    //     role: "link",
+    //     submenu: [
+    //         {
+    //             label: "访问shr的博客",
+    //             click: function () {
+    //                 require("electron").shell.openExternal("https://sunhr.top");
+    //             }
+    //         }
+    //     ]
+    // });
+    // template.push({
+    //     label: "更多",
+    //     // role: "link",
+    //     submenu: [
+    //         {
+    //             label: "查看博客",
+    //             click: function () { electron_1.shell.openExternal("https://sunhr.top"); }
+    //         },
+    //         {
+    //             label: "翻译",
+    //             click: function () { main_1.win.webContents.send("action", "opentranslate"); }
+    //         }
+    //     ]
+    // });
     template.push({
-        label: "链接",
-        role: "link",
-        submenu: [
-            {
-                label: "访问shr的博客",
-                click: function () {
-                    require("electron").shell.openExternal("https://sunhr.top");
-                }
-            }
-        ]
-    });
+        label: "翻译",
+            click: function () { main_1.win.webContents.send("action", "opentranslate"); }
+    })
     if (process.platform === "darwin") {
         template.unshift({
             label: electron_1.app.getName(),
