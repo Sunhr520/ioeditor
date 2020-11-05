@@ -9,6 +9,9 @@ var language_1 = require("../../components/language");
 var runner_1 = require("../../components/runner");
 var config_1 = require("../../components/config");
 var fs = require("fs");
+var BrowserWindow = electron_1.remote.BrowserWindow;
+//var win_1 = require("../../background");
+
 mytab_1.MyTab.init();
 language_1.Language.init();
 try {
@@ -143,6 +146,20 @@ electron_1.ipcRenderer.on("action", function (event, arg) {
                 mytab_1.MyTab.saveAll();
                 electron_1.ipcRenderer.send("quit");
             }
+            break;
+            case "opentranslate":
+            var translate = new BrowserWindow({
+                width: 450,
+                height: 400,
+                webPreferences: {
+                  nodeIntegration: true
+                },
+                //parent: win_1.win
+              })
+              translate.loadURL("file://" + __dirname + "/../../views/translate.html")
+              translate.show()
+              //translate.webContents.openDevTools()
+
             break;
     }
 });
