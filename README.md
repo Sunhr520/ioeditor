@@ -19,7 +19,6 @@ clone本仓库后使用yarn打包
 即可打包至dist_electron目录下，点击exe即可运行
 ### 直接下载
 [下载链接](http://photos.sunhr.top/shride.zip)
-下载后点击exe运行
 
 
 
@@ -39,22 +38,19 @@ clone本仓库后使用yarn打包
 
 ##  目录解释
 -src
-
 |- assets           储存一些文件，包括但不限于monaco-editor,mingw64,python
-
 |- components       一些功能的实现，比如判断文件使用的语言，调用批处理文件
-
 |- router
-
 |- store
-
 |- views
-
 |- App.vue          样式设计
-
 |- background.js    入口文件
 
-## 版本更新
+
+## 更新日志
+### 2020-10-15 16：00 更新至0.2.0
+#### 更新内容
+增加了翻译键，可以进行简单的翻译功能，在此感谢百度
 
 ## 联系作者
 email: Sunhr520@gmail.com

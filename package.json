@@ -1,7 +1,7 @@
 {
   "name": "ioeditor",
   "author": "Sunhr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,9 +13,11 @@
   },
   "main": "background.js",
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "dragula": "^3.7.3",
     "electron-tabs": "^0.15.0",
+    "js-md5": "^0.7.3",
     "jsonc": "^2.0.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
