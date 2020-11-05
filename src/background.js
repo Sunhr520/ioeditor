@@ -35,8 +35,8 @@ async function createWindow() {
 
   createProtocol('app')
   win.loadURL("file://" + __dirname + "/../src/views/index.html")
+  
   //win.webContents.openDevTools()
-
 
   win.on('close', function (e) {
     if (!confirm) {
